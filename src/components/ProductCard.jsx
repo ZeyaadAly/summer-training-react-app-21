@@ -5,11 +5,19 @@ function ProductCard({ product }) {
   const navigate = useNavigate();
   const { addToCart } = useCart();
 
+  // FakeStore uses `title`; local mock uses `name` — support both
+  const displayName = product.title || product.name || "Unknown Product";
+  // FakeStore uses `rating.rate`; local mock uses `rating` as a number
+  const ratingValue =
+    typeof product.rating === "object"
+      ? product.rating?.rate ?? 0
+      : product.rating ?? 0;
+
   return (
     <div className="product-card">
       <img
         src={product.image}
-        alt={product.name}
+        alt={displayName}
         className="product-img"
         onClick={() => navigate(`/product/${product.id}`)}
       />
@@ -19,18 +27,18 @@ function ProductCard({ product }) {
           className="product-name"
           onClick={() => navigate(`/product/${product.id}`)}
         >
-          {product.name}
+          {displayName}
         </h3>
         <div className="product-rating">
-          {"★".repeat(Math.floor(product.rating))}
-          {"☆".repeat(5 - Math.floor(product.rating))}
-          <span>{product.rating}</span>
+          {"★".repeat(Math.floor(ratingValue))}
+          {"☆".repeat(5 - Math.floor(ratingValue))}
+          <span>{ratingValue}</span>
         </div>
         <div className="product-footer">
           <span className="product-price">${product.price.toFixed(2)}</span>
           <button
             className="add-to-cart-btn"
-            onClick={() => addToCart(product)}
+            onClick={() => addToCart({ ...product, name: displayName })}
           >
             Add to Cart
           </button>

@@ -11,6 +11,13 @@ function Header() {
         <Link to="/" className="logo">
           MyShop
         </Link>
+
+        <nav className="header-nav">
+          <Link to="/add-product" className="nav-link nav-link-add">
+            + Add Product
+          </Link>
+        </nav>
+
         <button
           className="cart-btn"
           onClick={() => setIsDrawerOpen(true)}
