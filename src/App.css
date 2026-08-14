@@ -91,6 +91,76 @@ a {
   text-transform: uppercase;
 }
 
+/* ========== Title Component ========== */
+.title-wrapper {
+  margin-bottom: 24px;
+}
+
+.title-wrapper .page-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+}
+
+.title-wrapper .page-subheading {
+  font-size: 0.88rem;
+  color: #777;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.title-wrapper.home-title {
+  margin-bottom: 28px;
+}
+
+.title-wrapper.home-title .page-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.title-wrapper.details-page-title {
+  margin-bottom: 20px;
+}
+
+.title-wrapper.details-page-title .page-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.title-wrapper.details-title {
+  margin-bottom: 4px;
+}
+
+.title-wrapper.details-title .page-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.25;
+}
+
+.title-wrapper.add-title-wrapper {
+  margin-bottom: 0;
+}
+
+.title-wrapper.add-title-wrapper .page-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f7f4f0;
+}
+
+.title-wrapper.add-title-wrapper .page-subheading {
+  color: rgba(247, 244, 240, 0.65);
+  font-size: 0.82rem;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

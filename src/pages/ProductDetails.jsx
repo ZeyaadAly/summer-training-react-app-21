@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import Title from "../components/Title";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -32,6 +33,7 @@ function ProductDetails() {
   if (loading) {
     return (
       <main className="details-page">
+        <Title title="Product Details" className="details-page-title" />
         <button className="back-btn" onClick={() => navigate("/")}>← Back</button>
         <p className="loading-text">Loading product...</p>
       </main>
@@ -42,6 +44,7 @@ function ProductDetails() {
   if (error || !product) {
     return (
       <main className="details-page">
+        <Title title="Product Details" className="details-page-title" />
         <div className="error-state">
           <span className="error-icon">⚠️</span>
           <p>{error || "Product not found."}</p>
@@ -57,6 +60,7 @@ function ProductDetails() {
 
   return (
     <main className="details-page">
+      <Title title="Product Details" className="details-page-title" />
       <button className="back-btn" onClick={() => navigate("/")}>
         ← Back
       </button>
@@ -69,7 +73,7 @@ function ProductDetails() {
         />
         <div className="details-info">
           <span className="product-category">{product.category}</span>
-          <h1 className="details-name">{product.title}</h1>
+          <h2 className="details-name">{product.title}</h2>
           <div className="product-rating">
             {"★".repeat(Math.floor(rating))}
             {"☆".repeat(5 - Math.floor(rating))}

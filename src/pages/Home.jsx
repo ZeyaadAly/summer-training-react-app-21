@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
+import Title from "../components/Title";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -27,7 +28,7 @@ function Home() {
   if (loading) {
     return (
       <main className="home-page">
-        <h1 className="page-title">Our Products</h1>
+        <Title title="My Products" className="home-title" />
         <p className="loading-text">Loading products...</p>
       </main>
     );
@@ -36,6 +37,7 @@ function Home() {
   if (error) {
     return (
       <main className="home-page">
+        <Title title="My Products" className="home-title" />
         <div className="error-state">
           <span className="error-icon">⚠️</span>
           <p>Something went wrong: {error}</p>
@@ -49,7 +51,7 @@ function Home() {
 
   return (
     <main className="home-page">
-      <h1 className="page-title">Our Products</h1>
+      <Title title="My Products" className="home-title" />
       <div className="products-grid">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

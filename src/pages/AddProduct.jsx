@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Title from "../components/Title";
 
 const CATEGORIES = [
   "electronics",
@@ -94,7 +95,7 @@ function AddProduct() {
         </button>
         <div className="success-card">
           <div className="success-icon">✓</div>
-          <h2 className="success-title">Product Created!</h2>
+          <Title title="Product Created!" className="success-title-wrapper" />
           <p className="success-sub">
             The API responded with the following product data:
           </p>
@@ -135,7 +136,7 @@ function AddProduct() {
 
       <div className="add-card">
         <div className="add-card-header">
-          <h1 className="add-title">Add New Product</h1>
+          <Title title="Add New Product" className="add-title-wrapper" />
           <p className="add-sub">
             Fill out the form below and we'll POST it to{" "}
             <span className="api-badge">fakestoreapi.com</span>
